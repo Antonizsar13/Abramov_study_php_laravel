@@ -26,4 +26,23 @@ class MyController extends Controller
         $content = "Content 3";
         return view('MyController.metod', ['title' => $title, 'content' => $content]);
     }
+
+    public function links()
+    {
+        $links = [
+            [
+                'text' => 'text1',
+                'href' => 'href1',
+            ],
+            [
+                'text' => 'text2',
+                'href' => 'href2',
+            ],
+            [
+                'text' => 'text3',
+                'href' => 'href3',
+            ],
+        ];
+        return view('MyController.links', ['links' => $links]);
+    }
 }

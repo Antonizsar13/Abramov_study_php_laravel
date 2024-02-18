@@ -56,3 +56,5 @@ Route::get('/pages/all/', [PageContoller::class, 'showAll']);
 Route::get('/my_controller/metod1/', [MyController::class, 'metod1']);
 Route::get('/my_controller/metod2/', [MyController::class, 'metod2']);
 Route::get('/my_controller/metod3/', [MyController::class, 'metod3']);
+
+Route::get('/my_controller/links/', [MyController::class, 'links']);
