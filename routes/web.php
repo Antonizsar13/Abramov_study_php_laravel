@@ -58,3 +58,5 @@ Route::get('/my_controller/metod2/', [MyController::class, 'metod2']);
 Route::get('/my_controller/metod3/', [MyController::class, 'metod3']);
 
 Route::get('/my_controller/links/', [MyController::class, 'links']);
+
+Route::get('/my_controller/users/', [MyController::class, 'users']);

@@ -45,4 +45,36 @@ class MyController extends Controller
         ];
         return view('MyController.links', ['links' => $links]);
     }
+
+    public function users()
+    {
+        $users = [
+            [
+                'name' => 'user1',
+                'surname' => 'surname1',
+                'banned' => true,
+            ],
+            [
+                'name' => 'user2',
+                'surname' => 'surname2',
+                'banned' => false,
+            ],
+            [
+                'name' => 'user3',
+                'surname' => 'surname3',
+                'banned' => true,
+            ],
+            [
+                'name' => 'user4',
+                'surname' => 'surname4',
+                'banned' => false,
+            ],
+            [
+                'name' => 'user5',
+                'surname' => 'surname5',
+                'banned' => false,
+            ],
+        ];
+        return view('MyController.users', ['users' => $users]);
+    }
 }
