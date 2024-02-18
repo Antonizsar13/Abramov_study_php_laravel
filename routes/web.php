@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MyController;
 use App\Http\Controllers\PageContoller;
 use Illuminate\Support\Facades\Route;
 
@@ -28,20 +29,20 @@ Route::get('/{year}/{month}/{day}/', function ($year, $month, $day) {
     $day = (int)$day;
     $date = "$year-$month-$day";
 
-    $weekDay = date('N', strtotime($date)) -1;
+    $weekDay = date('N', strtotime($date)) - 1;
     $weekDaysNames = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
     return "День недели: $weekDaysNames[$weekDay]";
-})->where(['year' => '\d{4}','month' => '(0?[1-9]|1[0-2])', 'day' => '(0?[1-9]|[1-2][0-9]|3[0-1])']);
+})->where(['year' => '\d{4}', 'month' => '(0?[1-9]|1[0-2])', 'day' => '(0?[1-9]|[1-2][0-9]|3[0-1])']);
 
 
 Route::get('/user/user_name/{name}', function ($userName) {
 
-    $users = [ 
-     'user1' => 'city1', 
-     'user2' => 'city2', 
-     'user3' => 'city3', 
-     'user4' => 'city4', 
-     'user5' => 'city5'
+    $users = [
+        'user1' => 'city1',
+        'user2' => 'city2',
+        'user3' => 'city3',
+        'user4' => 'city4',
+        'user5' => 'city5'
     ];
     if (array_key_exists($userName, $users))
         return "Город пользователя $userName: $users[$userName]";
@@ -51,3 +52,7 @@ Route::get('/user/user_name/{name}', function ($userName) {
 
 Route::get('/pages/show/{id}', [PageContoller::class, 'showOne']);
 Route::get('/pages/all/', [PageContoller::class, 'showAll']);
+
+Route::get('/my_controller/metod1/', [MyController::class, 'metod1']);
+Route::get('/my_controller/metod2/', [MyController::class, 'metod2']);
+Route::get('/my_controller/metod3/', [MyController::class, 'metod3']);
