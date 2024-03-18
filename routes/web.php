@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\EmployeesController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\PageContoller;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\EmployeesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,3 +66,9 @@ Route::get('/my_controller/users/', [MyController::class, 'users']);
 Route::get('/my_controller/users/', [MyController::class, 'users']);
 
 Route::get('/employees/', [EmployeesController::class, 'index']);
+
+Route::get('/users/', [UserController::class, 'index']);
+Route::get('/users/create1', [UserController::class, 'create1'])->name('users.create1');
+Route::get('/users/create3', [UserController::class, 'create3'])->name('users.create3');;
+Route::get('/users/update', [UserController::class, 'update'])->name('users.update');;
+Route::get('/users/delete', [UserController::class, 'delete'])->name('users.delete');;
