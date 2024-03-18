@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\PageContoller;
 use Illuminate\Support\Facades\Route;
@@ -60,3 +61,7 @@ Route::get('/my_controller/metod3/', [MyController::class, 'metod3']);
 Route::get('/my_controller/links/', [MyController::class, 'links']);
 
 Route::get('/my_controller/users/', [MyController::class, 'users']);
+
+Route::get('/my_controller/users/', [MyController::class, 'users']);
+
+Route::get('/employees/', [EmployeesController::class, 'index']);
