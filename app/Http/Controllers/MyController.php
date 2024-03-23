@@ -2,10 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use Illuminate\Http\Request;
 
 class MyController extends Controller
 {
+    public function listCity()
+    {
+        $countries =  Country::with('cities')->get();
+
+        return view('MyController.listCity', ['countries' => $countries]);
+    }
+
+
     public function metod1()
     {
         $title = "Metod 1";

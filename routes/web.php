@@ -82,3 +82,4 @@ Route::match(['get', 'post'], '/post/new', [PostController::class, 'createPost']
 Route::match(['get', 'post'], '/post/edit/{id}', [PostController::class, 'editPost'])->where('id', '[0-9]+')->name('post.editPost');
 Route::get('/post/del/{id}', [PostController::class, 'delPost'])->where('id', '[0-9]+')->name('post.delPost');
 
+Route::get('/county/list_city', [MyController::class, 'listCity']);
